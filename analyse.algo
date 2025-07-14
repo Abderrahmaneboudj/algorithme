@@ -1,0 +1,31 @@
+ALGORITHM sentence
+VAR
+   chars , vowels ,words , i , j: INTEGER
+   sentence[]: STRING
+   v[5]: CHAR
+BEGIN
+ v[0]="a";
+ v[1]="o";
+ v[2]="i";
+ v[3]="u";
+ v[4]="e";
+ write("enter your sentence , make sure to write a . in the end :")
+ read(sentence)
+ i=0;
+ chars=0;
+ vowels=0;
+ words=0;
+ FOR i FROM 1 TO LENGTH(sentence) STEP 1  DO
+    chars=chars+1;
+    IF (sentece[i]==" " OR sentence[i]==".") THEN
+        words=words+1;
+    ELSE
+        FOR j FROM 0 TO 4 STEP 1 DO
+        IF (sentence[i]==v[j]) THEN
+            vowels= wowels+1;
+        END_IF
+    END_FOR
+    END_IF
+ END_FOR
+ write("your sentence contains :" , words , "words , and " , vowels ," vowels , and ", chars ," character")
+END
