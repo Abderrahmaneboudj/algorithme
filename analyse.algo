@@ -4,12 +4,14 @@ VAR
    sentence[]: STRING
    v[5]: CHAR
 BEGIN
+//here we add vowels to the table 
  v[0]="a";
  v[1]="o";
  v[2]="i";
  v[3]="u";
  v[4]="e";
  write("enter your sentence , make sure to write a . in the end :")
+ //here we read the sentence 
  read(sentence)
  i=0;
  chars=0;
@@ -17,12 +19,14 @@ BEGIN
  words=0;
  FOR i FROM 1 TO LENGTH(sentence) STEP 1  DO
     chars=chars+1;
-    IF (sentece[i]==" " OR sentence[i]==".") THEN
+    //here we set a condition to count how many words do we have 
+    IF (sentence[i]==" " OR sentence[i]==".") THEN
         words=words+1;
     ELSE
         FOR j FROM 0 TO 4 STEP 1 DO
+        //here , its a condition to catch and count the vowels 
         IF (sentence[i]==v[j]) THEN
-            vowels= wowels+1;
+            vowels= vowels+1;
         END_IF
     END_FOR
     END_IF
